@@ -16,3 +16,14 @@ def solution(s):
         if i.istitle(): l1.append(' ')
         l1.append(i)
     return ''.join(l1)
+
+
+
+# with regex:
+import re
+def solution(s):
+    return re.sub('([A-Z])', r' \1', s)
+
+# in one line:
+def solution(s):
+    return ''.join(' ' + c if c.isupper() else c for c in s)
